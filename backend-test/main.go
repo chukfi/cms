@@ -70,7 +70,7 @@ func main() {
 		database.DB.Create(&testPost)
 	}
 
-	r := router.SetupRouter(database.DB)
+	r := router.SetupRouter(database.DB, "./public")
 
 	serveConfig := serve.NewServeConfig("3000", []interface{}{}, database.DB, r)
 
